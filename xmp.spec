@@ -7,13 +7,10 @@ License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://xmp.sourceforge.net/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	XFree86-devel
-
-%define		_xbindir	/usr/X11R6/bin
-%define		_xmandir	/usr/X11R6/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 xmp is a multi-format module player for UNIX. In machines with GUS or
@@ -35,6 +32,7 @@ interpolacj±.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.* scripts
 %{__aclocal}
 %{__autoconf}
 %configure
@@ -42,12 +40,12 @@ interpolacj±.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_xbindir},{%{_mandir},%{_xmandir}}/man1}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_mandir}/man1}
 install etc/xmp-modules.conf etc/xmp.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install src/main/xmp $RPM_BUILD_ROOT%{_bindir}
-install src/main/xxmp $RPM_BUILD_ROOT%{_xbindir}
+install src/main/xxmp $RPM_BUILD_ROOT%{_bindir}
 install docs/xmp.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install docs/xxmp.1 $RPM_BUILD_ROOT%{_xmandir}/man1
+install docs/xxmp.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,6 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README docs/{CREDITS,ChangeLog,README.fixloop,README.trackers,README.unsqsh} etc/magic
 %config %{_sysconfdir}/*
 %attr(755,root,root) %{_bindir}/xmp
-%attr(755,root,root) %{_xbindir}/xxmp
+%attr(755,root,root) %{_bindir}/xxmp
 %{_mandir}/man1/*
-%{_xmandir}/man1/*
