@@ -1,7 +1,7 @@
 Summary:	Extended Module Player
 Name:		xmp
 Version:	2.0.3
-Release:	1
+Release:	2
 URL:		http://xmp.helllabs.org
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
@@ -26,6 +26,8 @@ interpolation.
 %setup -q
 
 %build
+aclocal
+autoconf
 %configure
 %{__make}
 
