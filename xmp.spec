@@ -1,10 +1,10 @@
 #
 # Conditional build:
-# _without_arts	- without aRts audio plugin
-# _without_esd	- without EsounD audio output plugin
-# _without_nas	- without NAS audio output plugin
-# _without_xmms	- without XMP as XMMS plugin
-# _with_nonfree	- with ppunpack and fmopl (GPL-incompatible - non-distributable)
+%bcond_without	arts		# without aRts audio plugin
+%bcond_without	esd		# without EsounD audio output plugin
+%bcond_without	nas		# without NAS audio output plugin
+%bcond_without	xmms		# without XMP as XMMS plugin
+%bcond_with	nonfree		# with ppunpack and fmopl (GPL-incompatible - non-distributable)
 #
 Summary:	Extended Module Player
 Summary(pl):	Rozszerzony odtwarzacz modu³ów
@@ -12,7 +12,7 @@ Name:		xmp
 Version:	2.0.5
 %define	pver	pre3
 Release:	0.%{pver}.2
-License:	GPL%{?_with_nonfree: with non-commercial additions}
+License:	GPL%{?with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{pver}.tar.bz2
 # Source0-md5:	749db9c8da956b403a959b4c8b909447
@@ -22,13 +22,13 @@ Patch2:		%{name}-load-fix.patch
 Patch3:		%{name}-nondfsg.patch
 URL:		http://xmp.sourceforge.net/
 BuildRequires:	XFree86-devel
-%{!?_without_arts:BuildRequires:	arts-devel}
+%{?with_arts:BuildRequires:	arts-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
-%{!?_without_esd:BuildRequires:	esound-devel}
-%{!?_without_nas:BuildRequires:	nas-devel}
-%{!?_without_xmms:BuildRequires:	rpmbuild(macros) >= 1.125}
-%{!?_without_xmms:BuildRequires:	xmms-devel}
+%{?with_esd:BuildRequires:	esound-devel}
+%{?with_nas:BuildRequires:	nas-devel}
+%{?with_xmms:BuildRequires:	rpmbuild(macros) >= 1.125}
+%{?with_xmms:BuildRequires:	xmms-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -113,7 +113,7 @@ Wtyczka XMMS odtwarzaj±ca modu³y d¼wiêkowe z u¿yciem biblioteki XMP.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%{?_with_nonfree:%patch3 -p1}
+%{?with_nonfree:%patch3 -p1}
 
 %build
 cp -f /usr/share/automake/config.* scripts
@@ -122,10 +122,10 @@ cp -f /usr/share/automake/config.* scripts
 # alsa disabled - only 0.5 supported for now
 %configure \
 	--disable-alsa \
-	%{?_without_arts:--disable-arts} \
-	%{?_without_esd:--disable-esd} \
-	%{?_without_nas:--disable-nas} \
-	%{?_without_xmms:--disable-xmms} \
+	%{!?with_arts:--disable-arts} \
+	%{!?with_esd:--disable-esd} \
+	%{!?with_nas:--disable-nas} \
+	%{!?with_xmms:--disable-xmms} \
 	--enable-dynamic
 %{__make}
 
@@ -161,25 +161,25 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xxmp
 %{_mandir}/man1/xxmp.1*
 
-%if 0%{!?_without_arts:1}
+%if %{with arts}
 %files output-arts
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/xmp/drivers/arts.so
 %endif
 
-%if 0%{!?_without_esd:1}
+%if %{with esd}
 %files output-esd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/xmp/drivers/esd.so
 %endif
 
-%if 0%{!?_without_nas:1}
+%if %{with nas}
 %files output-nas
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/xmp/drivers/nas.so
 %endif
 
-%if 0%{!?_without_xmms:1}
+%if %{with xmms}
 %files -n xmms-input-xmp
 %defattr(644,root,root,755)
 %attr(755,root,root) %{xmms_input_plugindir}/*.so
