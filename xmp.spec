@@ -11,7 +11,7 @@ Summary(pl):	Rozszerzony odtwarzacz modu³ów
 Name:		xmp
 Version:	2.0.5
 %define	pver	pre3
-Release:	0.%{pver}.1
+Release:	0.%{pver}.2
 License:	GPL%{?_with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{pver}.tar.bz2
@@ -27,12 +27,9 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 %{!?_without_esd:BuildRequires:	esound-devel}
 %{!?_without_nas:BuildRequires:	nas-devel}
+%{!?_without_xmms:BuildRequires:	rpmbuild(macros) >= 1.125}
 %{!?_without_xmms:BuildRequires:	xmms-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%if 0%{!?_without_xmms:1}
-%define		xmmsplugindir	%(xmms-config --input-plugin-dir)
-%endif
 
 %description
 xmp is a multi-format module player for UNIX. In machines with GUS or
@@ -103,6 +100,7 @@ Summary:	XMMS plugin that uses XMP library to play music modules
 Summary(pl):	Wtyczka XMMS odtwarzaj±ca modu³y d¼wiêkowe z u¿yciem XMP
 Group:		X11/Applications/Sound
 Requires:	%{name}-%{version}
+Requires:	xmms
 
 %description -n xmms-input-xmp
 XMMS plugin that uses XMP library to play music modules.
@@ -185,5 +183,5 @@ rm -rf $RPM_BUILD_ROOT
 %if 0%{!?_without_xmms:1}
 %files -n xmms-input-xmp
 %defattr(644,root,root,755)
-%attr(755,root,root) %{xmmsplugindir}/*.so
+%attr(755,root,root) %{xmms_input_plugindir}/*.so
 %endif
