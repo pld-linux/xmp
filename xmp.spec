@@ -49,14 +49,12 @@ install src/main/xxmp $RPM_BUILD_ROOT%{_xbindir}
 install docs/xmp.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install docs/xxmp.1 $RPM_BUILD_ROOT%{_xmandir}/man1
 
-gzip -9nf README docs/{CREDITS,ChangeLog,README.fixloop,README.trackers,README.unsqsh} etc/magic
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz docs/*.gz etc/*.gz
+%doc README docs/{CREDITS,ChangeLog,README.fixloop,README.trackers,README.unsqsh} etc/magic
 %config %{_sysconfdir}/*
 %attr(755,root,root) %{_bindir}/xmp
 %attr(755,root,root) %{_xbindir}/xxmp
