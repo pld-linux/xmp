@@ -1,0 +1,27 @@
+--- xmp-2.0.5-pre3/src/player/driver.c.orig	2001-02-24 20:32:41.000000000 +0100
++++ xmp-2.0.5-pre3/src/player/driver.c	2003-07-23 22:22:18.000000000 +0200
+@@ -140,7 +140,7 @@
+     char buf[256];
+ 
+     n = scandir (p, &file, select_file, alphasort);
+-    if (!n)
++    if (n <= 0)
+ 	return -1;
+ 
+     for (i = 0; i < n; i++) {
+@@ -213,11 +213,12 @@
+ 
+ #else
+ {
+-    char *p = malloc (MAXPATHLEN);
++    char *p = malloc (MAXPATHLEN), *ep = getenv ("XMP_LIB_PATH");
+ 
+-    snprintf (p, MAXPATHLEN, "%s/drivers/", getenv ("XMP_LIB_PATH"));
++    if (ep != NULL)
++    snprintf (p, MAXPATHLEN, "%s/drivers/", ep);
+ 
+-    if (load_drivers (p) < 0)
++    if ((ep == NULL) || (load_drivers (p) < 0))
+         load_drivers (DYNDRV_PREFIX "/drivers/");
+ 
+     free (p);
