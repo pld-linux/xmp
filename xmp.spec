@@ -127,7 +127,6 @@ cp -f /usr/share/automake/config.* scripts
 	%{?_without_nas:--disable-nas} \
 	%{?_without_xmms:--disable-xmms} \
 	--enable-dynamic
-
 %{__make}
 
 %install
