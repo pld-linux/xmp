@@ -11,7 +11,7 @@ Summary(pl):	Rozszerzony odtwarzacz modu³ów
 Name:		xmp
 Version:	2.0.5
 %define	pver	pre3
-Release:	0.%{pver}.2
+Release:	0.%{pver}.3
 License:	GPL%{?with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{pver}.tar.bz2
@@ -51,7 +51,7 @@ interpolacj±.
 Summary:	Extended Module Player with GUI
 Summary(pl):	Rozszerzony odtwarzacz modu³ów z graficznym interfejsem
 Group:		X11/Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description X11
 Extended Module Player with GUI.
@@ -63,7 +63,7 @@ Rozszerzony odtwarzacz modu³ów z graficznym interfejsem.
 Summary:	aRts audio output plugin for XMP
 Summary(pl):	Wtyczka wyj¶cia d¼wiêku aRts dla XMP
 Group:		Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description output-arts
 aRts audio output plugin for XMP.
@@ -75,7 +75,7 @@ Wtyczka wyj¶cia d¼wiêku aRts dla XMP.
 Summary:	EsounD audio output plugin for XMP
 Summary(pl):	Wtyczka wyj¶cia d¼wiêku EsounD dla XMP
 Group:		Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description output-esd
 EsounD audio output plugin for XMP.
@@ -87,7 +87,7 @@ Wtyczka wyj¶cia d¼wiêku EsounD dla XMP.
 Summary:	NAS audio output plugin for XMP
 Summary(pl):	Wtyczka wyj¶cia d¼wiêku NAS dla XMP
 Group:		Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description output-nas
 NAS audio output plugin for XMP.
@@ -99,7 +99,7 @@ Wtyczka wyj¶cia d¼wiêku NAS dla XMP.
 Summary:	XMMS plugin that uses XMP library to play music modules
 Summary(pl):	Wtyczka XMMS odtwarzaj±ca modu³y d¼wiêkowe z u¿yciem XMP
 Group:		X11/Applications/Sound
-Requires:	%{name}-%{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
 
 %description -n xmms-input-xmp
