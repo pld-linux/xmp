@@ -1,12 +1,12 @@
 Summary:	Extended Module Player
 Summary(pl):	Rozszerzony odtwarzacz modu³ów
 Name:		xmp
-Version:	2.0.3
-Release:	2
+Version:	2.0.4
+Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://xmp.helllabs.org/pkg/%{version}/%{name}-%{version}.tar.bz2
-URL:		http://xmp.helllabs.org/
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+URL:		http://xmp.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	autoconf
 BuildRequires:	automake
