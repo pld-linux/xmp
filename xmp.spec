@@ -15,7 +15,7 @@ Release:	0.%{pver}.1
 License:	GPL%{?_with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{pver}.tar.bz2
-# Source0-md5:	db1813fec46c57757965c53a8cf33c4f
+# Source0-md5:	749db9c8da956b403a959b4c8b909447
 Patch0:		%{name}-gcc33.patch
 Patch1:		%{name}-fix-shared.patch
 Patch2:		%{name}-load-fix.patch
