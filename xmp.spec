@@ -97,7 +97,7 @@ Wtyczka wyj軼ia d德i瘯u NAS dla XMP.
 
 %package -n xmms-input-xmp
 Summary:	XMMS plugin that uses XMP library to play music modules
-Summary(pl):	Wtyczka XMMS odtwarzaj帷a modu造 d德i瘯owe z u篡ciem XMP
+Summary(pl):	Wtyczka dla XMMS-a odtwarzaj帷a modu造 d德i瘯owe z u篡ciem XMP
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
@@ -106,7 +106,7 @@ Requires:	xmms
 XMMS plugin that uses XMP library to play music modules.
 
 %description -n xmms-input-xmp -l pl
-Wtyczka XMMS odtwarzaj帷a modu造 d德i瘯owe z u篡ciem biblioteki XMP.
+Wtyczka dla XMMS-a odtwarzaj帷a modu造 d德i瘯owe z u篡ciem biblioteki XMP.
 
 %prep
 %setup -q -n %{name}-%{version}-%{pver}
