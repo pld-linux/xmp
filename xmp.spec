@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	db1813fec46c57757965c53a8cf33c4f
 URL:		http://xmp.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
