@@ -14,7 +14,7 @@ Version:	2.0.5
 Release:	0.%{pver}.3
 License:	GPL%{?with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{pver}.tar.bz2
+Source0:	http://dl.sourceforge.net/xmp/%{name}-%{version}%{pver}.tar.bz2
 # Source0-md5:	749db9c8da956b403a959b4c8b909447
 Patch0:		%{name}-gcc33.patch
 Patch1:		%{name}-fix-shared.patch
@@ -106,7 +106,8 @@ Requires:	xmms
 XMMS plugin that uses XMP library to play music modules.
 
 %description -n xmms-input-xmp -l pl
-Wtyczka dla XMMS-a odtwarzaj帷a modu造 d德i瘯owe z u篡ciem biblioteki XMP.
+Wtyczka dla XMMS-a odtwarzaj帷a modu造 d德i瘯owe z u篡ciem biblioteki
+XMP.
 
 %prep
 %setup -q -n %{name}-%{version}-%{pver}
@@ -148,7 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README docs/{CREDITS,ChangeLog,README.{awebug,fixloop,ppunpack,trackers,unsqsh},formats} etc/magic
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xmp*.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xmp*.conf
 %attr(755,root,root) %{_bindir}/xmp
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_libdir}/xmp
