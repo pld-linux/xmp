@@ -7,7 +7,7 @@
 %bcond_with	nonfree		# with ppunpack and fmopl (GPL-incompatible - non-distributable)
 #
 Summary:	Extended Module Player
-Summary(pl):	Rozszerzony odtwarzacz modu³ów
+Summary(pl.UTF-8):   Rozszerzony odtwarzacz moduÅ‚Ã³w
 Name:		xmp
 Version:	2.0.5
 %define	pver	pre3
@@ -39,65 +39,65 @@ sampling rates up to 48kHz in mono or stereo, 8 or 16 bits, signed or
 unsigned, little or big endian samples with 32 bit linear
 interpolation.
 
-%description -l pl
-xmp jest odtwarzaczem modu³ów w wielu formatach. Potrafi obs³u¿yæ
-karty GUS i AWE, korzystaj±c z sekwencera OSS, aby nie obci±¿aæ
-systemu. U¿ywaj±c programowego miksowania, mo¿e odgrywaæ z
-czêstotliwo¶ci± próbkowania do 48kHz mono lub stereo, 8 lub 16 bitów,
-próbki ze znakiem lub bez, little- lub big-endian z 32-bitow±
-interpolacj±.
+%description -l pl.UTF-8
+xmp jest odtwarzaczem moduÅ‚Ã³w w wielu formatach. Potrafi obsÅ‚uÅ¼yÄ‡
+karty GUS i AWE, korzystajÄ…c z sekwencera OSS, aby nie obciÄ…Å¼aÄ‡
+systemu. UÅ¼ywajÄ…c programowego miksowania, moÅ¼e odgrywaÄ‡ z
+czÄ™stotliwoÅ›ciÄ… prÃ³bkowania do 48kHz mono lub stereo, 8 lub 16 bitÃ³w,
+prÃ³bki ze znakiem lub bez, little- lub big-endian z 32-bitowÄ…
+interpolacjÄ….
 
 %package X11
 Summary:	Extended Module Player with GUI
-Summary(pl):	Rozszerzony odtwarzacz modu³ów z graficznym interfejsem
+Summary(pl.UTF-8):   Rozszerzony odtwarzacz moduÅ‚Ã³w z graficznym interfejsem
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description X11
 Extended Module Player with GUI.
 
-%description X11 -l pl
-Rozszerzony odtwarzacz modu³ów z graficznym interfejsem.
+%description X11 -l pl.UTF-8
+Rozszerzony odtwarzacz moduÅ‚Ã³w z graficznym interfejsem.
 
 %package output-arts
 Summary:	aRts audio output plugin for XMP
-Summary(pl):	Wtyczka wyj¶cia d¼wiêku aRts dla XMP
+Summary(pl.UTF-8):   Wtyczka wyjÅ›cia dÅºwiÄ™ku aRts dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description output-arts
 aRts audio output plugin for XMP.
 
-%description output-arts -l pl
-Wtyczka wyj¶cia d¼wiêku aRts dla XMP.
+%description output-arts -l pl.UTF-8
+Wtyczka wyjÅ›cia dÅºwiÄ™ku aRts dla XMP.
 
 %package output-esd
 Summary:	EsounD audio output plugin for XMP
-Summary(pl):	Wtyczka wyj¶cia d¼wiêku EsounD dla XMP
+Summary(pl.UTF-8):   Wtyczka wyjÅ›cia dÅºwiÄ™ku EsounD dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description output-esd
 EsounD audio output plugin for XMP.
 
-%description output-esd -l pl
-Wtyczka wyj¶cia d¼wiêku EsounD dla XMP.
+%description output-esd -l pl.UTF-8
+Wtyczka wyjÅ›cia dÅºwiÄ™ku EsounD dla XMP.
 
 %package output-nas
 Summary:	NAS audio output plugin for XMP
-Summary(pl):	Wtyczka wyj¶cia d¼wiêku NAS dla XMP
+Summary(pl.UTF-8):   Wtyczka wyjÅ›cia dÅºwiÄ™ku NAS dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description output-nas
 NAS audio output plugin for XMP.
 
-%description output-nas -l pl
-Wtyczka wyj¶cia d¼wiêku NAS dla XMP.
+%description output-nas -l pl.UTF-8
+Wtyczka wyjÅ›cia dÅºwiÄ™ku NAS dla XMP.
 
 %package -n xmms-input-xmp
 Summary:	XMMS plugin that uses XMP library to play music modules
-Summary(pl):	Wtyczka dla XMMS-a odtwarzaj±ca modu³y d¼wiêkowe z u¿yciem XMP
+Summary(pl.UTF-8):   Wtyczka dla XMMS-a odtwarzajÄ…ca moduÅ‚y dÅºwiÄ™kowe z uÅ¼yciem XMP
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
@@ -105,8 +105,8 @@ Requires:	xmms
 %description -n xmms-input-xmp
 XMMS plugin that uses XMP library to play music modules.
 
-%description -n xmms-input-xmp -l pl
-Wtyczka dla XMMS-a odtwarzaj±ca modu³y d¼wiêkowe z u¿yciem biblioteki
+%description -n xmms-input-xmp -l pl.UTF-8
+Wtyczka dla XMMS-a odtwarzajÄ…ca moduÅ‚y dÅºwiÄ™kowe z uÅ¼yciem biblioteki
 XMP.
 
 %prep
