@@ -7,7 +7,7 @@
 %bcond_with	nonfree		# with ppunpack and fmopl (GPL-incompatible - non-distributable)
 #
 Summary:	Extended Module Player
-Summary(pl.UTF-8):   Rozszerzony odtwarzacz modułów
+Summary(pl.UTF-8):	Rozszerzony odtwarzacz modułów
 Name:		xmp
 Version:	2.0.5
 %define	pver	pre3
@@ -49,7 +49,7 @@ interpolacją.
 
 %package X11
 Summary:	Extended Module Player with GUI
-Summary(pl.UTF-8):   Rozszerzony odtwarzacz modułów z graficznym interfejsem
+Summary(pl.UTF-8):	Rozszerzony odtwarzacz modułów z graficznym interfejsem
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -61,7 +61,7 @@ Rozszerzony odtwarzacz modułów z graficznym interfejsem.
 
 %package output-arts
 Summary:	aRts audio output plugin for XMP
-Summary(pl.UTF-8):   Wtyczka wyjścia dźwięku aRts dla XMP
+Summary(pl.UTF-8):	Wtyczka wyjścia dźwięku aRts dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -73,7 +73,7 @@ Wtyczka wyjścia dźwięku aRts dla XMP.
 
 %package output-esd
 Summary:	EsounD audio output plugin for XMP
-Summary(pl.UTF-8):   Wtyczka wyjścia dźwięku EsounD dla XMP
+Summary(pl.UTF-8):	Wtyczka wyjścia dźwięku EsounD dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -85,7 +85,7 @@ Wtyczka wyjścia dźwięku EsounD dla XMP.
 
 %package output-nas
 Summary:	NAS audio output plugin for XMP
-Summary(pl.UTF-8):   Wtyczka wyjścia dźwięku NAS dla XMP
+Summary(pl.UTF-8):	Wtyczka wyjścia dźwięku NAS dla XMP
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -97,7 +97,7 @@ Wtyczka wyjścia dźwięku NAS dla XMP.
 
 %package -n xmms-input-xmp
 Summary:	XMMS plugin that uses XMP library to play music modules
-Summary(pl.UTF-8):   Wtyczka dla XMMS-a odtwarzająca moduły dźwiękowe z użyciem XMP
+Summary(pl.UTF-8):	Wtyczka dla XMMS-a odtwarzająca moduły dźwiękowe z użyciem XMP
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
