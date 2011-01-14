@@ -71,7 +71,7 @@ index 607bf9f..c573ffa 100644
 -
 -/*** For xmp ***/
 -#define HAS_YM3812 1
--#define INLINE inline
+-#define INLINE static inline
 -/* $Id$ */
 -
  #include "fmopl.h"
@@ -83,7 +83,7 @@ index 607bf9f..c573ffa 100644
 +#ifdef _MSC_VER
 +#  define INLINE __inline
 +#elif defined(__GNUC__)
-+#  define INLINE inline
++#  define INLINE static inline
 +#else
 +#  define INLINE
 +#endif

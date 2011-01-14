@@ -1,21 +1,22 @@
+# TODO: bmp, audacious plugins
 #
 # Conditional build:
-%bcond_without	arts		# without aRts audio driver
-%bcond_without	esd		# without EsounD audio output driver
-%bcond_without	nas		# without NAS audio output driver
-%bcond_without	pulseaudio	# without PulseAudio audio output driver
-%bcond_without	xmms		# without XMP as XMMS plugin
+%bcond_with	arts		# aRts audio driver
+%bcond_with	esd		# EsounD audio output driver
+%bcond_without	nas		# NAS audio output driver
+%bcond_without	pulseaudio	# PulseAudio audio output driver
+%bcond_without	xmms		# XMP as XMMS plugin
 %bcond_with	nonfree		# with recent fmopl (GPL-incompatible - non-distributable)
 #
 Summary:	Extended Module Player
 Summary(pl.UTF-8):	Rozszerzony odtwarzacz modułów
 Name:		xmp
-Version:	2.7.1
+Version:	3.3.0
 Release:	1
 License:	GPL%{?with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
-Source0:	http://dl.sourceforge.net/xmp/%{name}-%{version}.tar.gz
-# Source0-md5:	bbed5ba3dc9bd8ff38133b31fd5b8846
+Source0:	http://downloads.sourceforge.net/xmp/%{name}-%{version}.tar.gz
+# Source0-md5:	0ac15cdb68cf0a08f418d37b4c1843bd
 Patch0:		%{name}-nondfsg.patch
 URL:		http://xmp.sourceforge.net/
 %{?with_arts:BuildRequires:	arts-devel}
@@ -74,7 +75,8 @@ cp -f /usr/share/automake/config.* scripts
 	%{?with_nas:--enable-nas} \
 	%{?with_pulseaudio:--enable-pulseaudio} \
 	%{?with_xmms:--enable-xmms-plugin}
-%{__make} -j1
+%{__make} -j1 \
+	V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
