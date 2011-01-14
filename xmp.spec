@@ -95,12 +95,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README docs/{CREDITS,ChangeLog,README.{awebug,fixloop,trackers,unsqsh},formats}
 %dir %{_sysconfdir}/xmp
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xmp/*.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xmp/modules.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xmp/xmp.conf
 %attr(755,root,root) %{_bindir}/xmp
 %{_mandir}/man1/xmp.1*
 
 %if %{with xmms}
 %files -n xmms-input-xmp
 %defattr(644,root,root,755)
-%attr(755,root,root) %{xmms_input_plugindir}/*.so
+%attr(755,root,root) %{xmms_input_plugindir}/xmp-xmms.so
 %endif
