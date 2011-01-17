@@ -29,6 +29,10 @@ BuildRequires:	automake
 %{?with_xmms:BuildRequires:	xmms-devel}
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXt-devel
+Obsoletes:	xmp-X11
+Obsoletes:	xmp-output-arts
+Obsoletes:	xmp-output-esd
+Obsoletes:	xmp-output-nas
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
