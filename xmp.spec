@@ -24,6 +24,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 %{?with_esd:BuildRequires:	esound-devel}
 %{?with_nas:BuildRequires:	nas-devel}
+BuildRequires:	pkgconfig
 %{?with_pulseaudio:BuildRequires:	pulseaudio-devel}
 %{?with_xmms:BuildRequires:	rpmbuild(macros) >= 1.125}
 %{?with_xmms:BuildRequires:	xmms-devel}
@@ -66,7 +67,7 @@ Wtyczka dla XMMS-a odtwarzająca moduły dźwiękowe z użyciem biblioteki
 XMP.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %{?with_nonfree:%patch0 -p1}
 
 %build
