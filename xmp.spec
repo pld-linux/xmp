@@ -11,12 +11,12 @@
 Summary:	Extended Module Player
 Summary(pl.UTF-8):	Rozszerzony odtwarzacz modułów
 Name:		xmp
-Version:	3.3.0
+Version:	3.4.0
 Release:	1
 License:	GPL%{?with_nonfree: with non-commercial additions}
 Group:		Applications/Sound
 Source0:	http://downloads.sourceforge.net/xmp/%{name}-%{version}.tar.gz
-# Source0-md5:	0ac15cdb68cf0a08f418d37b4c1843bd
+# Source0-md5:	8d18f1340e46278f7006c4d6df385e4b
 Patch0:		%{name}-nondfsg.patch
 URL:		http://xmp.sourceforge.net/
 %{?with_arts:BuildRequires:	arts-devel}
