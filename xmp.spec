@@ -5,13 +5,13 @@
 Summary:	Extended Module Player
 Summary(pl.UTF-8):	Extended Module Player - rozszerzony odtwarzacz modułów
 Name:		xmp
-Version:	4.1.0
+Version:	4.2.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
-Source0:	http://downloads.sourceforge.net/xmp/%{name}-%{version}.tar.gz
-# Source0-md5:	d9661b0be1a7ec79fd6185b166c4e9dd
-URL:		http://xmp.sourceforge.net/
+Source0:	https://downloads.sourceforge.net/xmp/%{name}-%{version}.tar.gz
+# Source0-md5:	db41dd01ec0919091c322b1d74bf56e7
+URL:		https://xmp.sourceforge.net/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -19,10 +19,10 @@ BuildRequires:	libxmp-devel >= 4.4
 BuildRequires:	pkgconfig
 %{?with_pulseaudio:BuildRequires:	pulseaudio-devel}
 Requires:	libxmp >= 4.4
-Obsoletes:	xmp-X11
-Obsoletes:	xmp-output-arts
-Obsoletes:	xmp-output-esd
-Obsoletes:	xmp-output-nas
+Obsoletes:	xmp-X11 < 2.7
+Obsoletes:	xmp-output-arts < 2.7
+Obsoletes:	xmp-output-esd < 2.7
+Obsoletes:	xmp-output-nas < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,8 +49,6 @@ mniej znanych formatów, w tym: Protracker (MOD), Scream Tracker 3
 	--disable-silent-rules
 
 %{__make}
-# -j1 \
-#	V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
